@@ -6,10 +6,7 @@ app.controller('MainController',
 
 		$scope.figurines = [];
 
-		$http.get(`http://10.0.0.200:5000/api/Inventory`)
-		.success((err, inv) => {
-			if (err) console.error(err);
-			console.log('inv', inv);
-		});
+		$http.get(`http://localhost:5000/api/Inventory`)
+		.success(inv => $scope.figurines = inv);
 	}]
 );
